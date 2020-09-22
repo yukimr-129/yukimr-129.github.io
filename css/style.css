@@ -1,0 +1,334 @@
+@charset "utf-8";
+
+body {
+  font-family: "Noto Serif SC",serif;;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  border-bottom: 1px solid #666;
+  box-shadow: 1px 1px #e3e7f1;
+}
+
+/* メニュー */
+#nav-toggle {
+  position: fixed;
+  top: 30px;
+  right: 45px;
+  height: 32px;
+  cursor: pointer;
+}
+#nav-toggle > div {
+  position: relative;
+  width: 36px;
+}
+#nav-toggle span {
+  width: 100%;
+  height: 1px;
+  left: 0;
+  display: block;
+  background: #333;
+  position: absolute;
+  -webkit-transition: top .5s ease, -webkit-transform .6s ease-in-out;
+  transition: top .5s ease, -webkit-transform .6s ease-in-out;
+  transition: transform .6s ease-in-out, top .5s ease;
+  transition: transform .6s ease-in-out, top .5s ease, -webkit-transform .6s ease-in-out;
+}
+#nav-toggle span:nth-child(1) {
+  top: 0;
+}
+#nav-toggle span:nth-child(2) {
+  top: 14px;
+}
+#nav-toggle span:nth-child(3) {
+  top: 28px;
+}
+#nav-toggle:hover span:nth-child(1) {
+  top: 4px;
+}
+#nav-toggle:hover span:nth-child(3) {
+  top: 23px;
+}
+
+.open #nav-toggle span {
+  background: #fff;
+}
+.open #nav-toggle span:nth-child(1) {
+  top: 15px;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+.open #nav-toggle span:nth-child(2) {
+  top: 15px;
+  width: 0;
+  left: 50%;
+}
+.open #nav-toggle span:nth-child(3) {
+  top: 15px;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+#nav-toggle {
+  z-index: 1000;
+}
+
+#gloval-nav {
+  background: rgba(99, 99, 99,.95);
+  color: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 990;
+  text-align: center;
+  display: -webkit-box;
+  display: flex;
+  visibility: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+          align-items: center;
+  font-size: 29px;
+  opacity: 0;
+  -webkit-transition: opacity .6s ease, visibility .6s ease;
+  transition: opacity .6s ease, visibility .6s ease;
+}
+
+#gloval-nav a {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 0;
+  -webkit-transition: color .6s ease;
+  transition: color .6s ease;
+}
+#gloval-nav a:hover {
+  color: #666;
+}
+#gloval-nav ul {
+  list-style: none;
+}
+#gloval-nav ul li {
+  opacity: 0;
+  -webkit-transform: translateX(200px);
+          transform: translateX(200px);
+  -webkit-transition: opacity .2s ease, -webkit-transform .6s ease;
+  transition: opacity .2s ease, -webkit-transform .6s ease;
+  transition: transform .6s ease, opacity .2s ease;
+  transition: transform .6s ease, opacity .2s ease, -webkit-transform .6s ease;
+}
+#gloval-nav ul li:nth-child(2) {
+  -webkit-transition-delay: .15s;
+          transition-delay: .15s;
+}
+#gloval-nav ul li:nth-child(3) {
+  -webkit-transition-delay: .3s;
+          transition-delay: .3s;
+}
+#gloval-nav ul li:nth-child(4) {
+  -webkit-transition-delay: .45s;
+          transition-delay: .45s;
+}
+#gloval-nav ul li:nth-child(5) {
+  -webkit-transition-delay: .6s;
+          transition-delay: .6s;
+}
+#gloval-nav ul li:nth-child(6) {
+  -webkit-transition-delay: .75s;
+          transition-delay: .75s;
+}
+#gloval-nav ul li:nth-child(7) {
+  -webkit-transition-delay: .9s;
+          transition-delay: .9s;
+}
+
+.open {
+  overflow: hidden;
+}
+.open #gloval-nav {
+  visibility: visible;
+  opacity: 1;
+}
+.open #gloval-nav li {
+  opacity: 1;
+  -webkit-transform: translateX(-50px);
+  transform: translateX(-50px);
+  -webkit-transition: opacity .9s ease, -webkit-transform 1s ease;
+  transition: opacity .9s ease, -webkit-transform 1s ease;
+  transition: transform 1s ease, opacity .9s ease;
+  transition: transform 1s ease, opacity .9s ease, -webkit-transform 1s ease;
+}
+
+/* トップ */
+.top{
+  position: relative;
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  width: 100%;
+  height: 100vh;
+  background-size: 400% 400%;
+  animation: bg-move 15s ease infinite;
+}
+
+@keyframes bg-move {
+      0% {
+          background-position: 0% 50%;
+      }
+      50% {
+          background-position: 100% 50%;
+      }
+      100% {
+          background-position: 0% 50%;
+      }
+  }
+/* @keyframes fade-in {
+0% {opacity: 0}
+100% {opacity: 1}
+} */
+
+.top-container{
+  width: 100%;
+  position: absolute;
+  top: 35%;
+  text-align: center;
+  margin-top: 50px;
+}
+
+.lead {
+  color: #fff;
+  font-family: "Noto Serif SC",serif;
+  font-size: 40px;
+}
+
+.arrow {
+  position: absolute;
+  top: 80%;
+  right: 48%;
+  font-size: 50px;
+  /* width: 600px;
+  text-align: center;
+  font-size: 88px; */
+}
+
+/* 制作実績 */
+.work {
+  font-size: 15px;
+  width: 960px;
+  text-align: center;
+  margin: 100px auto 0px auto;
+}
+
+.swiper-container {
+  width: 960px;
+  height: 456px;
+}
+
+.swiper-content{
+  position:relative;
+  top:40%;
+  left:0;
+  width:50%;
+}
+
+.swiper-slide a img:hover {
+  opacity: 0.6;
+}
+
+.swiper-slide{
+
+}
+
+.swiper-text{
+  width: 100%;
+  font-size: 20px;
+  font-weight: bold;
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  transform: translate(-50%, -50%);
+}
+
+/* プロフィール */
+.profile {
+  width: 600px;
+  text-align: center;
+  margin: 300px auto 0px auto;
+}
+
+.flex {
+  display: flex;
+}
+
+.profile_img img{
+  width: 200px;
+  height: 200px;
+  background-image: url(../image/profile.jpg);
+  border-radius: 50%;
+}
+
+.profile_txt {
+  width: 400px;
+  margin-left: 30px;
+  text-align: left;
+}
+
+/* スキル */
+.skill {
+  width: 600px;
+  text-align: center;
+  margin: 250px auto 0px auto;
+}
+
+table, td, th {
+  border-collapse: collapse;
+  border: 1px #707070 solid;
+}
+
+table {
+  margin: auto;
+}
+
+th {
+  width: 200px;
+  padding: 10px;
+  font-weight: bold;
+}
+
+td {
+  width: 400px;
+  padding: 10px;
+  color: #7fbfff;
+}
+
+/* その他 */
+.contact {
+  width: 600px;
+  text-align: center;
+  margin: 250px auto 0px auto;
+}
+
+.mail {
+  font-size: 20px;
+}
+
+.github {
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+.item:hover{
+  display: block;
+  -webkit-transform: scale(1.3, 1.3);
+  transform: scale(1.3, 1.3);
+}
+
+
+a {
+  text-decoration: none;
+  color: #333333;
+}

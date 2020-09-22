@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="content-type" charset="utf-8">
+        <title>Portfolio</title>
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/all.css">
+        <link rel="stylesheet" href="css/swiper.min.css">
+        <script type="text/javascript" src="js/swiper.min.js"></script>
+        <script type="text/javascript" src="js/jquery-3.5.1.min.js"></script>
+        <script type="text/javascript" src="js/skrollr.js"></script>
+        <script src="https://kit.fontawesome.com/38e218237f.js" crossorigin="anonymous"></script>
+    </head>
+    <body id="skrollr-body">
+      <div id="nav-toggle">
+         <div>
+             <span></span>
+             <span></span>
+             <span></span>
+         </div>
+      </div>
+
+      <div id="gloval-nav">
+         <nav>
+             <ul>
+                 <li><a href="#skrollr-body">Home</a></li>
+                 <li><a href="#top_page">Works</a></li>
+                 <li><a href="#top_page">About</a></li>
+                 <li><a href="#top_page">Skills</a></li>
+                 <li><a href="#top_page">Others</a></li>
+             </ul>
+         </nav>
+        </div><!-- /#gloval-nav -->
+
+        <div id="top_page" class="top">
+          <div class="top-container">
+            <h1 class="lead">Welcome to Yuki Portfolio Site</h1>
+          </div>　<!-- top -->
+            <div class="arrow"><a href="#work"><i class="icon fas fa-chevron-circle-down"></i></a></div>
+        </div>　<!-- top -->
+
+        <div class="work">
+            <h2 id="work">WORKS</h2>
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <div class="swiper-content">
+                        <p class="swiper-text" data-swiper-parallax="-20%">coming soon...</p>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="swiper-content">
+                        <p class="swiper-text" data-swiper-parallax="-20%">coming soon...</p>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="swiper-content">
+                        <p class="swiper-text" data-swiper-parallax="-20%">coming soon...</p>
+                      </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+         </div>　<!-- work -->
+
+        <div class="profile" data-0="opacity:0;" data-bottom-top="transform:translateX(-200px);" data-center-center="transform:translateX(0px); opacity:1;">
+            <h2>ABOUT</h2>
+            <div class="flex">
+                <div class="profile_img">
+                  <img src="./image/mylogo.png" alt="">
+                </div>
+                <div class="profile_txt">
+                    <p>東京在住　26歳のWEBエンジニア（志望）。</p>
+                    <p>独学でWEBサイト制作、WEBアプリ開発を勉強中。</p>
+                    <p>将来はフリーランスとして日本を旅しながら生きていきたいです。</p>
+                </div>
+            </div>
+         </div> <!-- profile -->
+
+        <div class="skill" data-0="opacity:0;" data-bottom-top="transform:translateX(200px);" data-center-center="transform:translateX(0px); opacity:1;">
+            <h2>SKILLS</h2>
+            <table>
+                <tr>
+                    <th>HTML</th>
+                    <td><i class="fas fa-star"></i><i class="fas fa-star"></td>
+                </tr>
+                <tr>
+                    <th>CSS</th>
+                    <td><i class="fas fa-star"></i><i class="fas fa-star"></i></td>
+                </tr>
+                <tr>
+                    <th>jquery</th>
+                    <td><i class="fas fa-star"></i></td>
+                </tr>
+                <tr>
+                    <th>PHP</th>
+                    <td><i class="fas fa-star"></i></td>
+                </tr>
+                <tr>
+                    <th>Laravel</th>
+                    <td><i class="fas fa-star"></i></td>
+                </tr>
+            </table>
+         </div> <!-- skill -->
+
+        <div class="contact" data-0="opacity:0;" data-bottom-top="transform:scale(0) rotate(0deg);" data-center-center="transform:scale(1) rotate(360deg); opacity:1;">
+            <h2>OTHER</h2>
+            <div class="mail">
+                <a class="item" href="#"><i class="far fa-envelope"></i>メール</a>
+            </div>
+            <div class="github">
+                <a class="item" href="#"><i class="fab fa-github"></i>Github</a>
+            </div>
+        </div> <!-- contact -->
+
+      <script>
+        var mySwiper = new Swiper ('.swiper-container', {
+            effect: 'coverflow',
+            slidesPerView: 2,
+            centeredSlides: true,
+            loop: true,
+            coverflowEffect: {
+                slideShadows: true,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+              nextEl: '.swiper-button-next',
+              prevEl: '.swiper-button-prev',
+            },
+        })
+        skrollr.init({
+            beforerender: function(data) {
+                return data.curTop > data.lastTop;
+            }
+        });
+        $(function() {
+          $('a[href^="#"]').click(function() {
+              var speed = 300;
+              var href= $(this).attr("href");
+              var target = $(href == "#" || href == "" ? 'html' : href);
+              var position = target.offset().top;
+              $('body,html').animate({scrollTop:position}, speed, 'swing');
+              return false;
+           });
+        });
+      </script>
+      <script type="text/javascript" src="js/navigation.js"></script>
+    </body>
+</html>
